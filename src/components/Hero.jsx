@@ -12,7 +12,7 @@ const Hero = () => {
       >
         <div className="mt-[-88px]">
           <h1 className={`${styles.heroHeadText} text-white text-center`}>
-            Hi, I'm <span className="text-[#915EFF]">Andrei</span>
+            Hi, I'm <span className="text-azure">Andrei</span>
           </h1>
           <p
             className={`${styles.heroSubText} mt-2 text-white-100 text-center`}
@@ -21,16 +21,14 @@ const Hero = () => {
           </p>
         </div>
         <div className="flex items-center">
-          <div className="w-full h-1 violet-gradient" />
+          <div className="w-full h-1 hero-gradient" />
           <div className="w-5 h-5 rounded-full bg-white" />
         </div>
       </div>
 
-      {/* <ComputersCanvas /> */}
-
       <div className="absolute xs:bottom-16 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
-          <div className="w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2">
+          <div className="w-[35px] h-[64px] rounded-3xl border-2 border-secondary flex justify-center items-start p-2">
             <motion.div
               animate={{
                 y: [0, 24, 0],

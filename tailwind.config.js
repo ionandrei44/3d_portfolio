@@ -1,13 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+export default withMT({
   content: ["./src/**/*.{js,jsx}"],
   mode: "jit",
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
+        primary: "#151414",
+        secondary: "#bfbdbd",
+        skyBlue: "#5f7add",
+        azure: "#48c6ef",
+        ashGray: "#484747",
         "black-100": "#100d25",
         "black-200": "#090325",
         "white-100": "#f3f3f3",
@@ -17,11 +22,9 @@ export default {
       },
       screens: {
         xs: "450px",
-      },
-      backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        sm: "630px",
       },
     },
   },
   plugins: [],
-};
+});
