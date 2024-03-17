@@ -7,24 +7,19 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { useState, useRef } from "react";
 import { Button } from "@material-tailwind/react";
+import { useForm } from "react-hook-form";
 
 const Contact = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
   const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setForm({ ...form, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const onSubmit = (data) => {
     setLoading(true);
 
     emailjs
@@ -32,11 +27,11 @@ const Contact = () => {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
         {
-          from_name: form.name,
+          from_name: data.name,
           to_name: import.meta.env.VITE_TO_NAME,
-          from_email: form.email,
+          from_email: data.email,
           to_email: import.meta.env.VITE_TO_EMAIL,
-          message: form.message,
+          message: data.message,
         },
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
@@ -45,11 +40,9 @@ const Contact = () => {
           setLoading(false);
           alert("Email sent.");
 
-          setForm({ name: "", email: "", message: "" });
+          reset();
         },
-        (error) => {
-          console.log(error);
-
+        () => {
           setLoading(false);
           alert("Something went wrong.");
         }
@@ -71,41 +64,68 @@ const Contact = () => {
 
         <form
           ref={formRef}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
+            <span className="text-white font-medium">Your Name</span>
             <input
+              autoComplete="off"
               type="text"
               name="name"
-              value={form.name}
-              onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 ${
+                errors.name?.type === "required"
+                  ? "border-red-500"
+                  : "border-transparent"
+              } font-medium mt-4 mb-1`}
+              {...register("name", { required: true })}
             />
+            {errors.name?.type === "required" && (
+              <p className="text-md text-red-500 font-bold tracking-wide">
+                Name is required
+              </p>
+            )}
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
+            <span className="text-white font-medium">Your email</span>
             <input
+              autoComplete="off"
               type="email"
               name="email"
-              value={form.email}
-              onChange={handleChange}
               placeholder="What's your email address?"
-              className="bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className={`bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 ${
+                errors.email?.type === "required"
+                  ? "border-red-500"
+                  : "border-transparent"
+              } font-medium mt-4 mb-1`}
+              {...register("email", { required: true })}
             />
+            {errors.email?.type === "required" && (
+              <p className="text-md text-red-500 font-bold tracking-wide">
+                Email is required
+              </p>
+            )}
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
+            <span className="text-white font-medium">Your Message</span>
             <textarea
+              autoComplete="off"
               rows={7}
               name="message"
-              value={form.message}
-              onChange={handleChange}
               placeholder="What's your message?"
-              className="bg-[#151414] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium resize-none"
+              {...register("message", { required: true })}
+              className={`bg-[#151414] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium resize-none mt-4 mb-1 ${
+                errors.message?.type === "required"
+                  ? "border-red-500"
+                  : "border-transparent"
+              }`}
             />
+            {errors.message?.type === "required" && (
+              <p className="text-md text-red-500 font-bold tracking-wide">
+                Message is required
+              </p>
+            )}
           </label>
 
           <Button
