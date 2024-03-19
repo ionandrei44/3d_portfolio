@@ -15,9 +15,10 @@ const Hero = () => {
             Hi, I'm <span className="text-azure">Andrei</span>
           </h1>
           <p
-            className={`${styles.heroSubText} mt-2 text-white-100 text-center`}
+            className={`${styles.heroSubText} mt-2 text-white-100 text-center max-w-xl`}
           >
-            I work as a full-stack web developer
+            Unveiling the beauty of simplicity, I engineer applications that
+            intuitively guide users on their digital journey.
           </p>
         </div>
         <div className="flex items-center">

@@ -37,7 +37,7 @@ const ParticlesContainer = () => {
           color: "#fff",
           distance: 220,
           enable: true,
-          opacity: 0.3,
+          opacity: 0.2,
           width: 1,
         },
         collisions: {
@@ -61,7 +61,7 @@ const ParticlesContainer = () => {
           value: 100,
         },
         opacity: {
-          value: 0.3,
+          value: 0.2,
         },
         shape: {
           type: "edge",

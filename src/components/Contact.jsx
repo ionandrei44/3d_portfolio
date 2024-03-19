@@ -8,6 +8,7 @@ import { slideIn } from "../utils/motion";
 import { useState, useRef } from "react";
 import { Button } from "@material-tailwind/react";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 
 const Contact = () => {
   const {
@@ -38,7 +39,7 @@ const Contact = () => {
       .then(
         () => {
           setLoading(false);
-          alert("Email sent.");
+          toast.info("Email sent!");
 
           reset();
         },
@@ -75,13 +76,15 @@ const Contact = () => {
               name="name"
               placeholder="What's your name?"
               className={`bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 ${
-                errors.name?.type === "required"
+                errors.name?.type === "isRequired"
                   ? "border-red-500"
                   : "border-transparent"
               } font-medium mt-4 mb-1`}
-              {...register("name", { required: true })}
+              {...register("name", {
+                validate: { isRequired: (value) => value.trim().length > 0 },
+              })}
             />
-            {errors.name?.type === "required" && (
+            {errors.name?.type === "isRequired" && (
               <p className="text-md text-red-500 font-bold tracking-wide">
                 Name is required
               </p>
@@ -95,13 +98,15 @@ const Contact = () => {
               name="email"
               placeholder="What's your email address?"
               className={`bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 ${
-                errors.email?.type === "required"
+                errors.email?.type === "isRequired"
                   ? "border-red-500"
                   : "border-transparent"
               } font-medium mt-4 mb-1`}
-              {...register("email", { required: true })}
+              {...register("email", {
+                validate: { isRequired: (value) => value.trim().length > 0 },
+              })}
             />
-            {errors.email?.type === "required" && (
+            {errors.email?.type === "isRequired" && (
               <p className="text-md text-red-500 font-bold tracking-wide">
                 Email is required
               </p>
@@ -114,14 +119,16 @@ const Contact = () => {
               rows={7}
               name="message"
               placeholder="What's your message?"
-              {...register("message", { required: true })}
+              {...register("message", {
+                validate: { isRequired: (value) => value.trim().length > 0 },
+              })}
               className={`bg-[#151414] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-2 font-medium resize-none mt-4 mb-1 ${
-                errors.message?.type === "required"
+                errors.message?.type === "isRequired"
                   ? "border-red-500"
                   : "border-transparent"
               }`}
             />
-            {errors.message?.type === "required" && (
+            {errors.message?.type === "isRequired" && (
               <p className="text-md text-red-500 font-bold tracking-wide">
                 Message is required
               </p>
@@ -132,7 +139,7 @@ const Contact = () => {
             type="submit"
             disabled={loading}
             variant="gradient"
-            className="py-3 px-8 rounded-xl outline-none w-fit text-white font-bold"
+            className="py-3 px-8 rounded-xl outline-none w-full xs:w-fit text-white font-bold"
           >
             {loading ? "Sending..." : "Send"}
           </Button>
@@ -141,7 +148,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
-        className="h-[350px] md:h-[550px] xl:w-[55%] xl:h-auto"
+        className="h-[400px] sm:h-[550px] xl:w-[55%] xl:h-auto w-full"
       >
         <EarthCanvas />
       </motion.div>

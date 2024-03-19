@@ -34,6 +34,23 @@ const Navbar = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1);
+      if (navLinks.map((link) => link.id).includes(hash)) {
+        setActive(hash);
+      }
+    };
+
+    handleHashChange();
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
   return (
     <>
       <nav
@@ -58,11 +75,11 @@ const Navbar = () => {
               <a href={`#${link.id}`} key={link.id}>
                 <li
                   className={`border-b ${
-                    active === link.title
+                    active === link.id
                       ? "text-white border-b-white"
                       : "text-secondary border-b-transparent"
                   } hover:text-white hover:border-b-white text-[18px] font-medium cursor-pointer transition-all duration-300`}
-                  onClick={() => setActive(link.title)}
+                  onClick={() => setActive(link.id)}
                 >
                   {link.title}
                 </li>
@@ -90,12 +107,12 @@ const Navbar = () => {
             <a href={`#${link.id}`} key={link.id}>
               <li
                 className={`border-b ${
-                  active === link.title
+                  active === link.id
                     ? "text-white border-b-white"
                     : "text-secondary border-b-transparent"
                 } hover:text-white hover:border-b-white text-[18px] font-medium cursor-pointer transition-all duration-300`}
                 onClick={() => {
-                  setActive(link.title);
+                  setActive(link.id);
                   closeDrawer();
                 }}
               >
