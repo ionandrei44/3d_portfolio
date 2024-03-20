@@ -2,6 +2,9 @@ import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import ParticlesContainer from "./ParticlesContainer";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import { Tooltip } from "@material-tailwind/react";
 
 const Hero = () => {
   return (
@@ -21,6 +24,37 @@ const Hero = () => {
             intuitively guide users on their digital journey.
           </p>
         </div>
+
+        <div className="flex items-center gap-3 mx-auto">
+          <Tooltip content="GitHub Profile">
+            <GitHubIcon
+              fontSize="large"
+              className="cursor-pointer"
+              onClick={() =>
+                window.open("https://github.com/ionandrei44", "_blank")
+              }
+            />
+          </Tooltip>
+
+          <Tooltip content="LinkedIn Profile">
+            <div
+              className="bg-white h-[26.25px] w-[26.25px] flex justify-center items-center rounded-md
+          "
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/ionandreigabriel/",
+                  "_blank"
+                )
+              }
+            >
+              <LinkedInIcon
+                fontSize="large"
+                className="cursor-pointer text-[#0077B5]"
+              />
+            </div>
+          </Tooltip>
+        </div>
+
         <div className="flex items-center">
           <div className="w-full h-1 hero-gradient" />
           <div className="w-5 h-5 rounded-full bg-white" />
