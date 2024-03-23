@@ -9,18 +9,19 @@ const Tech = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={styles.sectionSubText}>What I can work with</p>
+        <h2 className={styles.sectionHeadText}>Tech.</h2>
       </motion.div>
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-lg max-w-3xl leading-[30px]"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
-        dolorum. Obcaecati nemo nesciunt cumque possimus iure accusamus
-        excepturi eligendi. Inventore veniam iure tenetur nihil exercitationem
-        quasi earum in incidunt.
+        The following projects serve as tangible demonstrations of my skills and
+        experience, featuring real-world examples of my work. Each project is
+        briefly described and includes a link to the source code, illustrating
+        my proficiency in solving problems, adeptness with various technologies,
+        and effective project management capabilities.
       </motion.p>
 
       <div className="mt-20 flex flex-row flex-wrap justify-center gap-10">

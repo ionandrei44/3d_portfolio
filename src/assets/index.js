@@ -23,9 +23,8 @@ import threejs from "./tech/threejs.svg";
 
 import amdaris from "./company/amdaris.jpeg";
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import cryptoWallet from "./crypto-wallet.png";
+import proshop from "./proshop.png";
 
 export {
   logo,
@@ -49,8 +48,7 @@ export {
   tailwind,
   typescript,
   threejs,
-  carrent,
-  jobit,
-  tripguide,
   amdaris,
+  cryptoWallet,
+  proshop,
 };
