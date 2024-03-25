@@ -37,12 +37,15 @@ const About = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-lg max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-lg leading-[30px]"
       >
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque,
-        dolorum. Obcaecati nemo nesciunt cumque possimus iure accusamus
-        excepturi eligendi. Inventore veniam iure tenetur nihil exercitationem
-        quasi earum in incidunt.
+        I am a versatile full-stack web developer, driven by my passion for
+        technology and its capacity to innovate and shape the future. I
+        specialize in developing applications using JavaScript and TypeScript,
+        leveraging cutting-edge frameworks and tools like React, Next.js, and
+        Node.js. I am a fast learner who works closely with clients to develop
+        efficient, scalable, and user-friendly solutions that address real-world
+        problems.
       </motion.p>
 
       <div className="mt-20 flex justify-center flex-wrap gap-10">

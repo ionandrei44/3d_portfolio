@@ -15,13 +15,12 @@ const Tech = () => {
 
       <motion.p
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-secondary text-lg max-w-3xl leading-[30px]"
+        className="mt-4 text-secondary text-lg leading-[30px]"
       >
-        The following projects serve as tangible demonstrations of my skills and
-        experience, featuring real-world examples of my work. Each project is
-        briefly described and includes a link to the source code, illustrating
-        my proficiency in solving problems, adeptness with various technologies,
-        and effective project management capabilities.
+        In the dynamic field of web development, the landscape is constantly
+        evolving, with emerging technologies constantly pushing boundaries. I am
+        currently using the following technologies while actively enriching my
+        knowledge of innovations poised to revolutionize the field.
       </motion.p>
 
       <div className="mt-20 flex flex-row flex-wrap justify-center gap-10">
