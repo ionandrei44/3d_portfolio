@@ -111,29 +111,29 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Associate Software Developer",
-    company_name: "Amdaris",
-    icon: amdaris,
-    iconBg: "#383E56",
-    date: "April 2022 - October 2022",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
     title: "Software Developer",
     company_name: "Amdaris",
     icon: amdaris,
     iconBg: "#383E56",
     date: "November 2022 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Contributing to the development of a white-label application utilizing micro-frontends architecture.",
+      "Collaborating with cross-functional teams, including designers, product managers, and developers, to craft a high-quality product.",
+      "Implementing a shared library of UI components to streamline development efforts and ensure consistency across multiple projects.",
+      "Participating actively in code reviews, offering constructive feedback to peers, promoting a collaborative environment.",
+    ],
+  },
+  {
+    title: "Associate Software Developer",
+    company_name: "Amdaris",
+    icon: amdaris,
+    iconBg: "#383E56",
+    date: "April 2022 - October 2022",
+    points: [
+      "Incorporated additional features within an internal application utilized by the company's customers.",
+      "Implemented responsive design and ensured cross-browser compatibility.",
+      "Created comprehensive unit tests, increasing application reliability, identifying and rectifying potential bugs, and ensuring a smooth user experience.",
+      "Optimized the application for a seamless transition from development to production.",
     ],
   },
 ];

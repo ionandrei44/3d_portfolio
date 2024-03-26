@@ -17,7 +17,7 @@ const Tech = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-lg leading-[30px]"
       >
-        In the dynamic field of web development, the landscape is constantly
+        In the dynamic realm of web development, the landscape is constantly
         evolving, with emerging technologies constantly pushing boundaries. I am
         currently using the following technologies while actively enriching my
         knowledge of innovations poised to revolutionize the field.
