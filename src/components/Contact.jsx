@@ -85,7 +85,7 @@ const Contact = () => {
               })}
             />
             {errors.name?.type === "isRequired" && (
-              <p className="text-md text-red-500 font-bold tracking-wide">
+              <p className="text-md text-red-500 text-sm font-semibold tracking-wide">
                 Name is required
               </p>
             )}
@@ -107,7 +107,7 @@ const Contact = () => {
               })}
             />
             {errors.email?.type === "isRequired" && (
-              <p className="text-md text-red-500 font-bold tracking-wide">
+              <p className="text-md text-red-500 text-sm font-semibold tracking-wide">
                 Email is required
               </p>
             )}
@@ -129,7 +129,7 @@ const Contact = () => {
               }`}
             />
             {errors.message?.type === "isRequired" && (
-              <p className="text-md text-red-500 font-bold tracking-wide">
+              <p className="text-md text-red-500 text-sm font-semibold tracking-wide">
                 Message is required
               </p>
             )}

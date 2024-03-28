@@ -4,8 +4,6 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
-import menu from "./menu.svg";
-import close from "./close.svg";
 
 import css from "./tech/css.png";
 import docker from "./tech/docker.png";
@@ -33,8 +31,6 @@ export {
   mobile,
   web,
   github,
-  menu,
-  close,
   css,
   docker,
   figma,

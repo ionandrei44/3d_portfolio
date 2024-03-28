@@ -130,7 +130,7 @@ const experiences = [
     iconBg: "#383E56",
     date: "April 2022 - October 2022",
     points: [
-      "Incorporated additional features within an internal application utilized by the company's customers.",
+      "Incorporated additional features within an internal application used by the company's customers.",
       "Implemented responsive design and ensured cross-browser compatibility.",
       "Created comprehensive unit tests, increasing application reliability, identifying and rectifying potential bugs, and ensuring a smooth user experience.",
       "Optimized the application for a seamless transition from development to production.",

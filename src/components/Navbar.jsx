@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks } from "../constants";
-import { logo, menu, close } from "../assets";
+import { logo } from "../assets";
 import MenuIcon from "@mui/icons-material/Menu";
 import { Drawer } from "@material-tailwind/react";
 
@@ -66,7 +66,7 @@ const Navbar = () => {
             }}
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold cursor-pointer">
+            <p className="text-white text-[18px] font-bold cursor-pointer select-none">
               Andrei Ion
             </p>
           </Link>
@@ -130,10 +130,11 @@ const Navbar = () => {
             onClick={() => {
               setActive("");
               window.scrollTo(0, 0);
+              closeDrawer();
             }}
           >
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold cursor-pointer">
+            <p className="text-white text-[18px] font-bold cursor-pointer select-none">
               Andrei Ion
             </p>
           </Link>
